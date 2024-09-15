@@ -23,7 +23,8 @@ const Form = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("http://localhost:5000/api/submit-form", {
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/submit-form`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
