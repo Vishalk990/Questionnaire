@@ -1,5 +1,3 @@
-
-
 export const ResignationReason = ({ register, watch }) => {
   const reasons = [
     "Salary",
@@ -17,7 +15,7 @@ export const ResignationReason = ({ register, watch }) => {
   ];
 
   const watchedReasons = watch("resignationReasons", []);
-  const showOtherReason = watchedReasons.includes("Other(specify)");
+  const showOtherReason = Array.isArray(watchedReasons) && watchedReasons.includes("Other(specify)");
 
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">

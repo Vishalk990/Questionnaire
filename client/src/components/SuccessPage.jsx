@@ -3,8 +3,8 @@ import { FaCheckCircle } from 'react-icons/fa';
 
 const SuccessPage = ({ onReset }) => {
   return (
-    <div className="min-h-screen border bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div className="h-[75vh] bg-gray-100 flex flex-col justify-center py-2 sm:px-6 lg:px-6">
+      <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <div className="text-center">
             <FaCheckCircle className="mx-auto h-12 w-12 text-green-500" />
@@ -25,7 +25,7 @@ const SuccessPage = ({ onReset }) => {
               onClick={onReset}
               className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
-              Submit Another Response
+              Go to Home
             </button>
           </div>
         </div>

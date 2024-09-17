@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { StarIcon } from './StarIcon';
 
-export const RatingQuestions = ({ register }) => {
+export const RatingQuestions = ({ register, errors }) => {
   const aspects = [
     "Working relationship with your current Supervisor/HOD",
     "Working relationship with fellow employees",
@@ -57,7 +57,7 @@ export const RatingQuestions = ({ register }) => {
                 >
                   <input
                     type="radio"
-                    {...register(`rating${index + 1}`)}
+                    {...register(`rating${index + 1}`, { required: "This rating is required" })}
                     value={rating}
                     className="sr-only"
                   />
@@ -68,6 +68,9 @@ export const RatingQuestions = ({ register }) => {
                 </label>
               ))}
             </div>
+            {errors[`rating${index + 1}`] && (
+              <p className="text-red-500 text-xs italic mt-1">{errors[`rating${index + 1}`].message}</p>
+            )}
             <div className="flex justify-between text-xs mt-1 text-gray-500">
               <span>Poor</span>
               <span>Outstanding</span>

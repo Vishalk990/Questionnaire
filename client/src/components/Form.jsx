@@ -60,7 +60,7 @@ const Form = () => {
               <ResignationReason register={register} watch={watch} />
               <SpecificEvent register={register} watch={watch} />
               <DiscussionWithSupervisor register={register} watch={watch} />
-              <RatingQuestions register={register} />
+              <RatingQuestions register={register} errors={errors} />
 
               <div className="text-center">
                 <button
