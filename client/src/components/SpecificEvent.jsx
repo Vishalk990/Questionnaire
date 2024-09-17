@@ -6,7 +6,7 @@ export const SpecificEvent = ({ register, watch }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="px-6 py-4">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+        <h2 className="text-2xl font-semibold mb-4 text-[#003399]">
           Specific Event
         </h2>
         <p className="mb-4 text-gray-600">
@@ -21,14 +21,14 @@ export const SpecificEvent = ({ register, watch }) => {
                 value={option.toLowerCase()}
                 className="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500"
               />
-              <span className="ml-2 text-gray-700">{option}</span>
+              <span className="ml-2 text-sm text-gray-700">{option}</span>
             </label>
           ))}
         </div>
         {watchQuestion2 === "yes" && (
           <textarea
             {...register("question2Explanation")}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full text-sm px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             rows="4"
             placeholder="Please briefly explain the specific event or issue:"
           />

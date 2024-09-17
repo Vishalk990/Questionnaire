@@ -1,4 +1,5 @@
-
+import { useState } from 'react';
+import { StarIcon } from './StarIcon';
 
 export const RatingQuestions = ({ register }) => {
   const aspects = [
@@ -7,28 +8,63 @@ export const RatingQuestions = ({ register }) => {
     "Salary and Benefits for your position",
   ];
 
+  const [ratings, setRatings] = useState({});
+  const [hoveredRatings, setHoveredRatings] = useState({});
+
+  const handleMouseEnter = (aspectIndex, rating) => {
+    setHoveredRatings(prev => ({
+      ...prev,
+      [aspectIndex]: rating
+    }));
+  };
+
+  const handleMouseLeave = (aspectIndex) => {
+    setHoveredRatings(prev => ({
+      ...prev,
+      [aspectIndex]: 0
+    }));
+  };
+
+  const handleClick = (aspectIndex, rating) => {
+    setRatings(prev => ({
+      ...prev,
+      [aspectIndex]: rating
+    }));
+  };
+
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="px-6 py-4">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+        <h2 className="text-xl font-semibold mb-4 text-[#003399]">
           Overall Experience
         </h2>
         <p className="mb-4 text-gray-600">
-          Please rate the following on a scale of 1 to 5 with "1" being poor and "5" being outstanding:
+          Please rate the following aspects with 1 star being poor and 5 stars being outstanding:
         </p>
         {aspects.map((aspect, index) => (
           <div key={index} className="mb-6">
             <h3 className="font-medium mb-2 text-gray-700">{aspect}</h3>
-            <div className="flex justify-between">
+            <div 
+              className="flex mx-auto items-center md:w-2/4 justify-between"
+              onMouseLeave={() => handleMouseLeave(index)}
+            >
               {[1, 2, 3, 4, 5].map((rating) => (
-                <label key={rating} className="flex flex-col items-center">
+                <label 
+                  key={rating} 
+                  className="mr-1 cursor-pointer"
+                  onMouseEnter={() => handleMouseEnter(index, rating)}
+                  onClick={() => handleClick(index, rating)}
+                >
                   <input
                     type="radio"
                     {...register(`rating${index + 1}`)}
                     value={rating}
-                    className="form-radio h-5 w-5 text-blue-600 focus:ring-blue-500"
+                    className="sr-only"
                   />
-                  <span className="mt-1 text-sm text-gray-600">{rating}</span>
+                  <StarIcon 
+                    filled={rating <= (hoveredRatings[index] || ratings[index] || 0)}
+                  />
+                  <span className="sr-only">{rating} stars</span>
                 </label>
               ))}
             </div>
