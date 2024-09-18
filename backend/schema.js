@@ -40,6 +40,12 @@ const formSchema = new mongoose.Schema({
       min: 1,
       max: 5
     },
+    rating4: {
+      type: Number,
+      required: true,
+      min: 1,
+      max: 5
+    },
   }, { timestamps: true });
 
 const Form = mongoose.model("exitform", formSchema);

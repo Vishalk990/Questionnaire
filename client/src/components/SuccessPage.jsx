@@ -3,7 +3,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 
 const SuccessPage = ({ onReset }) => {
   return (
-    <div className="h-[75vh] bg-gray-100 flex flex-col justify-center py-2 sm:px-6 lg:px-6">
+    <div className="h-[75vh] bg-gray-100 flex Inter flex-col justify-center py-2 sm:px-6 lg:px-6">
       <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <div className="text-center">
