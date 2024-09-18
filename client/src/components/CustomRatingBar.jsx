@@ -36,7 +36,7 @@ export const CustomRatingBar = ({
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-white ">
       <div className="flex justify-between mb-2">
         {[1, 2, 3, 4, 5].map((rating) => (
           <RatingFace key={rating} emotion={rating} filled={value >= rating} />

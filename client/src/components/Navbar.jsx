@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <div className="sticky top-0 z-0 bg-white">
+    <div className="sticky top-0 z-50 bg-white">
       <div className=" flex flex-col sm:flex-row items-center justify-around px-4 py-2">
         <div className="w-full sm:w-auto mb-4 sm:mb-0">
           <img
