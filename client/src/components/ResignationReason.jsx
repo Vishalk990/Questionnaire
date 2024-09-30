@@ -15,7 +15,8 @@ export const ResignationReason = ({ register, watch }) => {
   ];
 
   const watchedReasons = watch("resignationReasons", []);
-  const showOtherReason = Array.isArray(watchedReasons) && watchedReasons.includes("Other(specify)");
+  const showOtherReason =
+    Array.isArray(watchedReasons) && watchedReasons.includes("Other(specify)");
 
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
@@ -24,7 +25,8 @@ export const ResignationReason = ({ register, watch }) => {
           Reason for Resignation
         </h2>
         <p className="mb-4 text-gray-600">
-          Please indicate reason(s) below, which contributed to your decision to resign your current position:
+          Please indicate reason(s) below, which contributed to your decision to
+          resign your current position:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {reasons.map((reason) => (

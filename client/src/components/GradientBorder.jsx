@@ -4,16 +4,14 @@ const GradientBorder = ({ children, title }) => {
       <div className="gradient-top">
         <h2 className="text-center font-semibold">{title}</h2>
       </div>
-      <div className="content-area">
-        {children}
-      </div>
+      <div className="content-area">{children}</div>
       <div className="gradient-bottom"></div>
       <style jsx>{`
         .gradient-border-container {
           border: 1px solid transparent;
           border-radius: 8px;
-          background-image: linear-gradient(white, white), 
-                            linear-gradient(to right, #a0c4e4, #4f8bc9, #a0c4e4);
+          background-image: linear-gradient(white, white),
+            linear-gradient(to right, #a0c4e4, #4f8bc9, #a0c4e4);
           background-origin: border-box;
           background-clip: content-box, border-box;
           overflow: hidden;
@@ -21,7 +19,8 @@ const GradientBorder = ({ children, title }) => {
           display: flex;
           flex-direction: column;
         }
-        .gradient-top, .gradient-bottom {
+        .gradient-top,
+        .gradient-bottom {
           background: linear-gradient(to right, #a0c4e4, #4f8bc9, #a0c4e4);
           padding: 10px 20px;
           color: white;

@@ -1,5 +1,3 @@
-
-
 export const DiscussionWithSupervisor = ({ register, watch }) => {
   const watchQuestion3 = watch("question3");
 
@@ -10,10 +8,11 @@ export const DiscussionWithSupervisor = ({ register, watch }) => {
           Discussion with Supervisor
         </h2>
         <p className="mb-4 text-gray-600">
-          Did you have a discussion with your Supervisor/HOD or higher authorities?
+          Did you have a discussion with your Supervisor/HOD or higher
+          authorities?
         </p>
         <div className="space-x-4 mb-4">
-          {['Yes', 'No'].map((option) => (
+          {["Yes", "No"].map((option) => (
             <label key={option} className="inline-flex items-center">
               <input
                 type="radio"

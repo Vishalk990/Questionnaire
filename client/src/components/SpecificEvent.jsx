@@ -1,5 +1,3 @@
-
-
 export const SpecificEvent = ({ register, watch }) => {
   const watchQuestion2 = watch("question2");
 
@@ -13,7 +11,7 @@ export const SpecificEvent = ({ register, watch }) => {
           Was there a specific event or issue that prompted your resignation?
         </p>
         <div className="space-x-4 mb-4">
-          {['Yes', 'No'].map((option) => (
+          {["Yes", "No"].map((option) => (
             <label key={option} className="inline-flex items-center">
               <input
                 type="radio"

@@ -1,4 +1,10 @@
-import { AngryFace, ExcitedFace, HappyFace, NeutralFace, SadFace } from "./EmotionIcons";
+import {
+  AngryFace,
+  ExcitedFace,
+  HappyFace,
+  NeutralFace,
+  SadFace,
+} from "./EmotionIcons";
 
 const RatingFace = ({ emotion, filled }) => {
   const emotions = {

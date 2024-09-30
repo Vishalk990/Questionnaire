@@ -1,35 +1,35 @@
-import { useState } from 'react';
-import { CustomRatingBar } from './CustomRatingBar';
+import { useState } from "react";
+import { CustomRatingBar } from "./CustomRatingBar";
 
 export const RatingQuestions = ({ register, errors }) => {
   const aspects = [
     "Working relationship with your current Supervisor/HOD",
     "Working relationship with fellow employees",
     "Salary and Benefits for your position",
-    "Your Overall Experience"
+    "Your Overall Experience",
   ];
 
   const [ratings, setRatings] = useState({});
   const [hoveredRatings, setHoveredRatings] = useState({});
 
   const handleMouseEnter = (aspectIndex, rating) => {
-    setHoveredRatings(prev => ({
+    setHoveredRatings((prev) => ({
       ...prev,
-      [aspectIndex]: rating
+      [aspectIndex]: rating,
     }));
   };
 
   const handleMouseLeave = (aspectIndex) => {
-    setHoveredRatings(prev => ({
+    setHoveredRatings((prev) => ({
       ...prev,
-      [aspectIndex]: 0
+      [aspectIndex]: 0,
     }));
   };
 
   const handleClick = (aspectIndex, rating) => {
-    setRatings(prev => ({
+    setRatings((prev) => ({
       ...prev,
-      [aspectIndex]: rating
+      [aspectIndex]: rating,
     }));
   };
 
@@ -40,7 +40,8 @@ export const RatingQuestions = ({ register, errors }) => {
           Rate Your Experience
         </h2>
         <p className="mb-4 text-gray-600">
-          Please rate the following aspects with 1 being poor and 5 being outstanding:
+          Please rate the following aspects with 1 being poor and 5 being
+          outstanding:
         </p>
         {aspects.map((aspect, index) => (
           <div key={index} className="mb-6">

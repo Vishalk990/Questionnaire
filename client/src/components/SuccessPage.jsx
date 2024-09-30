@@ -1,5 +1,4 @@
-
-import { FaCheckCircle } from 'react-icons/fa';
+import { FaCheckCircle } from "react-icons/fa";
 
 const SuccessPage = ({ onReset }) => {
   return (
@@ -17,7 +16,8 @@ const SuccessPage = ({ onReset }) => {
           </div>
           <div className="mt-6">
             <p className="text-center text-sm text-gray-600">
-              We appreciate your feedback and wish you all the best in your future endeavors.
+              We appreciate your feedback and wish you all the best in your
+              future endeavors.
             </p>
           </div>
           <div className="mt-6">

@@ -1,15 +1,16 @@
-import Footer from "./components/Footer";
-import Form from "./components/Form";
-import Navbar from "./components/Navbar";
+import EmployeeExitData from "./pages/EmployeeExitData";
+import EmployeeExitForm from "./pages/EmployeeExitForm";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
+  const router = createBrowserRouter([
+    { path: "/exitForm", element: <EmployeeExitForm /> },
+    { path: "/exitFormData", element: <EmployeeExitData /> },
+  ]);
+
   return (
     <>
-      <div className="Inter">
-        <Navbar />
-        <Form />
-        <Footer/>
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }

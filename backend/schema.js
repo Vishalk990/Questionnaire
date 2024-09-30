@@ -1,21 +1,22 @@
 const mongoose = require("mongoose");
 
-const formSchema = new mongoose.Schema({
+const formSchema = new mongoose.Schema(
+  {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     employeeId: {
       type: String,
-      required: true
+      required: true,
     },
     designation: {
       type: String,
-      required: true
+      required: true,
     },
     department: {
       type: String,
-      required: true
+      required: true,
     },
     improvementAreas: [String],
     question2: String,
@@ -26,27 +27,29 @@ const formSchema = new mongoose.Schema({
       type: Number,
       required: true,
       min: 1,
-      max: 5
+      max: 5,
     },
     rating2: {
       type: Number,
       required: true,
       min: 1,
-      max: 5
+      max: 5,
     },
     rating3: {
       type: Number,
       required: true,
       min: 1,
-      max: 5
+      max: 5,
     },
     rating4: {
       type: Number,
       required: true,
       min: 1,
-      max: 5
+      max: 5,
     },
-  }, { timestamps: true });
+  },
+  { timestamps: true }
+);
 
 const Form = mongoose.model("exitform", formSchema);
 

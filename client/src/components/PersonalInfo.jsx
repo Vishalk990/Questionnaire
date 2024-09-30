@@ -53,4 +53,3 @@ export const PersonalInfo = ({ register, errors }) => {
     </div>
   );
 };
-
