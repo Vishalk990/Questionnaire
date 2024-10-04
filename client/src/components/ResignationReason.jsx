@@ -33,7 +33,7 @@ export const ResignationReason = ({ register, watch }) => {
             <label key={reason} className="flex items-center space-x-3">
               <input
                 type="checkbox"
-                {...register("resignationReasons")}
+                {...register("improvementAreas")}
                 value={reason}
                 className="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500"
               />

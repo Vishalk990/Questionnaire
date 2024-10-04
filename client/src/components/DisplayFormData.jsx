@@ -4,7 +4,7 @@ import GradientBorder from "./GradientBorder";
 
 const DisplayFormData = () => {
   const [formData, setFormData] = useState([]);
-  const [selectedEmployee, setSelectedEmployee] = useState(null); // State to hold the selected employee data
+  const [selectedEmployee, setSelectedEmployee] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -56,7 +56,7 @@ const DisplayFormData = () => {
                   <th className="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">
                     Designation
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-primary  uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">
                     Department
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">
@@ -116,49 +116,29 @@ const DisplayFormData = () => {
                 <strong>Improvement Areas:</strong>{" "}
                 {selectedEmployee.improvementAreas.join(", ")}
               </div>
-              <div>
-                <strong>Reason for Resignation:</strong>
-                {Array.isArray(selectedEmployee?.resignationReasons) &&
-                selectedEmployee.resignationReasons.length > 0
-                  ? selectedEmployee.resignationReasons.join(", ")
-                  : "No reasons provided"}
-              </div>
+            </div>
 
-              {selectedEmployee.otherResignationReason && (
-                <div>
-                  <strong>Other Reason:</strong>{" "}
-                  {selectedEmployee.otherResignationReason}
-                </div>
-              )}
-              <div>
-                <strong>Specific Event Prompting Resignation:</strong>{" "}
-                {selectedEmployee.specificEvent}
-              </div>
-              <div>
-                <strong>Discussion with Supervisor:</strong>{" "}
-                {selectedEmployee.discussionWithSupervisor ? "Yes" : "No"}
-              </div>
-            </div>
+            {/* Display ratings for each question */}
             <div className="mb-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <strong>Working relationship with Supervisor:</strong>{" "}
-                  {selectedEmployee.rating1}/5
+              <h3 className="text-lg font-semibold mb-2">Ratings:</h3>
+              {selectedEmployee.questions && selectedEmployee.questions.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {selectedEmployee.questions.map((q, index) => (
+                    <div key={index}>
+                      <strong>{q.questionText}:</strong> {q.rating}/5
+                      {q.explanation && (
+                        <div>
+                          <em>Explanation: {q.explanation}</em>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <strong>Working relationship with Employees:</strong>{" "}
-                  {selectedEmployee.rating2}/5
-                </div>
-                <div>
-                  <strong>Salary and Benefits:</strong>{" "}
-                  {selectedEmployee.rating3}/5
-                </div>
-                <div>
-                  <strong>Overall Experience:</strong>{" "}
-                  {selectedEmployee.rating4}/5
-                </div>
-              </div>
+              ) : (
+                <p>No ratings available.</p>
+              )}
             </div>
+
             <div className="flex justify-end">
               <button
                 className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
