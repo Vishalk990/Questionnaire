@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 bg-white">
@@ -11,18 +13,18 @@ const Navbar = () => {
         </div>
         <div className="w-full sm:w-auto">
           <nav className="flex justify-center sm:justify-end space-x-4 md:p-3">
-            <a
-              href="#"
+            <Link
+              to={"/"}
               className="text-primary hover:text-[#f55e15] font-normal"
             >
               HOME
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to={"/exitformdata"}
               className="text-primary hover:text-[#f55e15] font-normal"
             >
-              DOWNLOADS
-            </a>
+              DATA
+            </Link>
           </nav>
         </div>
       </div>
