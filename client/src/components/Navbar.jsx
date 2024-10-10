@@ -19,12 +19,12 @@ const Navbar = () => {
             >
               HOME
             </Link>
-            <Link
+            {/* <Link
               to={"/exitformdata"}
               className="text-primary hover:text-[#f55e15] font-normal"
             >
               DATA
-            </Link>
+            </Link> */}
           </nav>
         </div>
       </div>

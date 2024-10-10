@@ -7,7 +7,7 @@ function App() {
   const router = createBrowserRouter([
     { path: "/", element: <EmployeeExitForm /> },
     { path: "/exitFormData", element: <EmployeeExitData /> },
-    { path: "/dashboard", element: <DashboardAnalytics/> },
+    // { path: "/dashboard", element: <DashboardAnalytics/> },
 
   ]);
 
